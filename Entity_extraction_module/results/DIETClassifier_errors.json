@@ -1,0 +1,219 @@
+[
+  {
+    "text": "actors of Avengers",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "acted_in",
+        "entity": "edge"
+      },
+      {
+        "start": 10,
+        "end": 18,
+        "value": "Avengers",
+        "entity": "Movie"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "Movie",
+        "start": 10,
+        "end": 18,
+        "confidence_entity": 0.9992884397506714,
+        "value": "Avengers",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "edge",
+        "start": 0,
+        "end": 6,
+        "confidence_entity": 0.7788209688430897,
+        "value": "acted_in",
+        "extractor": "CRFEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "Movie",
+        "start": 10,
+        "end": 18,
+        "confidence_entity": 0.9999329654508264,
+        "value": "Avengers",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "actors of Charlie Bratlett",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "acted_in",
+        "entity": "edge"
+      },
+      {
+        "start": 10,
+        "end": 26,
+        "value": "Charlie Bratlett",
+        "entity": "Movie"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "Movie",
+        "start": 10,
+        "end": 26,
+        "confidence_entity": 0.9994388222694397,
+        "value": "Charlie Bratlett",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "edge",
+        "start": 0,
+        "end": 6,
+        "confidence_entity": 0.7788112547032486,
+        "value": "acted_in",
+        "extractor": "CRFEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "Movie",
+        "start": 10,
+        "end": 26,
+        "confidence_entity": 0.9990346361049482,
+        "value": "Charlie Bratlett",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "actors of A Christmas Story",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "acted_in",
+        "entity": "edge"
+      },
+      {
+        "start": 10,
+        "end": 27,
+        "value": "A Christmas Story",
+        "entity": "Movie"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "Movie",
+        "start": 10,
+        "end": 27,
+        "confidence_entity": 0.9904463291168213,
+        "value": "A Christmas Story",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "edge",
+        "start": 0,
+        "end": 6,
+        "confidence_entity": 0.7788169418386295,
+        "value": "acted_in",
+        "extractor": "CRFEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "Movie",
+        "start": 10,
+        "end": 27,
+        "confidence_entity": 0.9918495452883833,
+        "value": "A Christmas Story",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "followers of Tatman",
+    "entities": [
+      {
+        "start": 0,
+        "end": 12,
+        "value": "follows",
+        "entity": "edge"
+      },
+      {
+        "start": 13,
+        "end": 19,
+        "value": "Tatman",
+        "entity": "Person"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "edge",
+        "start": 0,
+        "end": 9,
+        "confidence_entity": 0.8544252514839172,
+        "value": "followers",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "Person",
+        "start": 13,
+        "end": 19,
+        "confidence_entity": 0.9932030439376831,
+        "value": "Tatman",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "edge",
+        "start": 0,
+        "end": 9,
+        "confidence_entity": 0.8985444985906399,
+        "value": "followers",
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "Person",
+        "start": 13,
+        "end": 19,
+        "confidence_entity": 0.9857156911248091,
+        "value": "Tatman",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "am I talking to a bot?",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "Movie",
+        "start": 16,
+        "end": 17,
+        "confidence_entity": 0.5195041298866272,
+        "value": "a",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "am I talking to a human?",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "Movie",
+        "start": 16,
+        "end": 17,
+        "confidence_entity": 0.5324001312255859,
+        "value": "a",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  }
+]

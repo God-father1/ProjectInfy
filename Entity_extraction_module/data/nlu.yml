@@ -1,0 +1,411 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+
+- intent: acted_in
+  examples: |
+    - [actors]{"entity": "edge", "value":"acted_in"} of [Avengers]{"entity":"Movie"}
+    - [co-stars]{"entity": "edge", "value":"acted_in"} of movie [Avengers]{"entity":"Movie"}
+    - who [acted]{"entity": "edge", "value":"acted_in"} in [Avengers]{"entity":"Movie"}
+    - who [acted]{"entity": "edge", "value":"acted_in"} in movie [Avengers]{"entity":"Movie"}
+    - who was the [actor]{"entity": "edge", "value":"acted_in"} in [Avengers]{"entity":"Movie"}
+    - who were the [cast]{"entity": "edge", "value":"acted_in"} of [Avengers]{"entity":"Movie"}
+    - in which movie did [Rowan Atkinson]{"entity": "Person"} [act]{"entity": "edge", "value":"acted_in"}
+    - in which movie [Rowan Atkinson]{"entity": "Person"} [acted]{"entity": "edge", "value":"acted_in"}
+    - movies [Rowan Atkinson]{"entity": "Person"} [acted]{"entity": "edge", "value":"acted_in"} in 
+    - [Rowan Atkinson]{"entity": "Person"} [acted]{"entity": "edge", "value":"acted_in"} in
+    - [Rowan Atkinson]{"entity": "Person"}
+    - movies [Rowan Atkinson]{"entity": "Person"} [acted]{"entity": "edge", "value":"acted_in"} in
+    - in which movie did [Rowan Atkinson]{"entity":"Person"} [act]{"entity": "edge", "value":"acted_in"}
+    - who [acted]{"entity": "edge", "value":"acted_in"} in the movie [Avengers]{"entity":"Movie"}.
+    - who [acted]{"entity": "edge", "value":"acted_in"} in the movie [avengers]{"entity":"Movie"}.
+    - [actors]{"entity": "edge", "value":"acted_in"} of [Charlie Bratlett]{"entity":"Movie"}
+    - [co-stars]{"entity": "edge", "value":"acted_in"} of movie [Charlie Bratlett]{"entity":"Movie"}
+    - who [acted]{"entity": "edge", "value":"acted_in"} in [Charlie Bratlett]{"entity":"Movie"}
+    - who [acted]{"entity": "edge", "value":"acted_in"} in movie [Charlie Bratlett]{"entity":"Movie"}
+    - who was the [actor]{"entity": "edge", "value":"acted_in"} in [Charlie Bratlett]{"entity":"Movie"}
+    - who were the [cast]{"entity": "edge", "value":"acted_in"} of [Charlie Bratlett]{"entity":"Movie"}
+    - actors [acted]{"entity": "edge", "value":"acted_in"} in movie [Avengers]{"entity":"Movie"}
+
+    - [actors]{"entity": "edge", "value":"acted_in"} of [Pirates Of Carrebean]{"entity":"Movie"}
+    - [co-stars]{"entity": "edge", "value":"acted_in"} of movie [Pirates Of Carrebean]{"entity":"Movie"}
+    - who [acted]{"entity": "edge", "value":"acted_in"} in [Pirates Of Carrebean]{"entity":"Movie"}
+    - who [acted]{"entity": "edge", "value":"acted_in"} in movie [Pirates Of Carrebean]{"entity":"Movie"}
+    - who was the [actor]{"entity": "edge", "value":"acted_in"} in [Pirates Of Carrebean]{"entity":"Movie"}
+    - who were the [cast]{"entity": "edge", "value":"acted_in"} of [Pirates Of Carrebean]{"entity":"Movie"}
+    - in which movie did [Tom Holland]{"entity": "Person"} [act]{"entity": "edge", "value":"acted_in"}
+    - in which movie [Tom Holland]{"entity": "Person"} [acted]{"entity": "edge", "value":"acted_in"}
+    - movies [Tom Holland]{"entity": "Person"} [acted]{"entity": "edge", "value":"acted_in"} in 
+    - [Tom Holland]{"entity": "Person"} [acted]{"entity": "edge", "value":"acted_in"} in
+    - [Tom Holland]{"entity": "Person"}
+    - movies [Tom Holland]{"entity": "Person"} [acted]{"entity": "edge", "value":"acted_in"} in
+    - in which movie did [Tom Holland]{"entity":"Person"} [act]{"entity": "edge", "value":"acted_in"}
+    - who [acted]{"entity": "edge", "value":"acted_in"} in the movie [Pirates Of Carrebean]{"entity":"Movie"}.
+    - who [acted]{"entity": "edge", "value":"acted_in"} in the movie [Pirates Of Carrebean]{"entity":"Movie"}.
+    - [actors]{"entity": "edge", "value":"acted_in"} of [A Christmas Story]{"entity":"Movie"}
+    - [co-stars]{"entity": "edge", "value":"acted_in"} of movie [A Christmas Story]{"entity":"Movie"}
+    - who [acted]{"entity": "edge", "value":"acted_in"} in [A Christmas Story]{"entity":"Movie"}
+    - who [acted]{"entity": "edge", "value":"acted_in"} in movie [A Christmas Story]{"entity":"Movie"}
+    - who was the [actor]{"entity": "edge", "value":"acted_in"} in [A Christmas Story]{"entity":"Movie"}
+    - who were the [cast]{"entity": "edge", "value":"acted_in"} of [A Christmas Story]{"entity":"Movie"}
+    - actors [acted]{"entity": "edge", "value":"acted_in"} in movie [Pirates Of Carrebean]{"entity":"Movie"}
+
+- intent: directed_by
+  examples: |
+    - who [directed]{"entity": "edge", "value":"directed"} [Avengers]{"entity":"Movie"}
+    - [Director]{"entity": "edge", "value":"directed"} of [Avengers]{"entity":"Movie"}
+    - [Avengers]{"entity":"Movie"} is [directed]{"entity": "edge", "value":"directed"} by
+    - who is the [director]{"entity": "edge", "value":"directed"} of [Avengers]{"entity":"Movie"}
+    - [Avengers]{"entity":"Movie"} is [directed]{"entity": "edge", "value":"directed"} by
+    - movies [directed]{"entity": "edge", "value":"directed"} by [Christopher Nolan]{"entity": "Person"}
+    - movies in which [director]{"entity": "edge", "value":"directed"} is [Christopher Nolan]{"entity": "Person"}
+    - who [directed]{"entity": "edge", "value":"directed"} the movie [Avengers]{"entity":"Movie"}
+    - name of the [director]{"entity": "edge", "value":"directed"} of [Avengers]{"entity":"Movie"}
+    - what is the name of [Avengers]{"entity":"Movie"} movie [director]{"entity": "edge", "value":"directed"}
+    - [Christopher Nolan]{"entity": "Person"}
+    - movies by [christopher Nolan]{"entity": "Person"}
+    - movies [directed]{"entity": "edge", "value":"directed"} by [Christopher Nolan]{"entity": "Person"}.
+    - movies [directed]{"entity": "edge", "value":"directed"} by [christopher nolan]{"entity": "Person"}.
+    - [director]{"entity": "edge", "value":"directed"} of [Avengers]{"entity":"Movie"}
+    - who is the [director]{"entity": "edge", "value":"directed"} of [Notebook]{"entity":"Movie"}
+    - who is the [director]{"entity": "edge", "value":"directed"} of [notebook]{"entity":"Movie"}
+    - who [directed]{"entity": "edge", "value":"directed"} [Charlie Bratlett]{"entity":"Movie"}
+    - [Director]{"entity": "edge", "value":"directed"} of [Charlie Bratlett]{"entity":"Movie"}
+    - [Charlie Bratlett]{"entity":"Movie"} is [directed]{"entity": "edge", "value":"directed"} by
+    - who is the [director]{"entity": "edge", "value":"directed"} of [Charlie Bratlett]{"entity":"Movie"}
+    - [Charlie Bratlett]{"entity":"Movie"} is [directed]{"entity": "edge", "value":"directed"} by
+
+    - who [directed]{"entity": "edge", "value":"directed"} [Pirates Of Carrebean]{"entity":"Movie"}
+    - [Director]{"entity": "edge", "value":"directed"} of [Pirates Of Carrebean]{"entity":"Movie"}
+    - [Pirates Of Carrebean]{"entity":"Movie"} is [directed]{"entity": "edge", "value":"directed"} by
+    - who is the [director]{"entity": "edge", "value":"directed"} of [Pirates Of Carrebean]{"entity":"Movie"}
+    - [Pirates Of Carrebean]{"entity":"Movie"} is [directed]{"entity": "edge", "value":"directed"} by
+    - movies [directed]{"entity": "edge", "value":"directed"} by [Steven Spielberg]{"entity": "Person"}
+    - movies in which [director]{"entity": "edge", "value":"directed"} is [Steven Spielberg]{"entity": "Person"}
+    - who [directed]{"entity": "edge", "value":"directed"} the movie [Pirates Of Carrebean]{"entity":"Movie"}
+    - name of the [director]{"entity": "edge", "value":"directed"} of [Pirates Of Carrebean]{"entity":"Movie"}
+    - what is the name of [Pirates Of Carrebean]{"entity":"Movie"} movie [director]{"entity": "edge", "value":"directed"}
+    - [Steven Spielberg]{"entity": "Person"}
+    - movies by [Steven Spielberg]{"entity": "Person"}
+    - movies [directed]{"entity": "edge", "value":"directed"} by [Steven Spielberg]{"entity": "Person"}.
+    - movies [directed]{"entity": "edge", "value":"directed"} by [Steven Spielberg]{"entity": "Person"}.
+    - [director]{"entity": "edge", "value":"directed"} of [Pirates Of Carrebean]{"entity":"Movie"}
+    - who is the [director]{"entity": "edge", "value":"directed"} of [Spiderman]{"entity":"Movie"}
+    - who is the [director]{"entity": "edge", "value":"directed"} of [spiderman]{"entity":"Movie"}
+    - who [directed]{"entity": "edge", "value":"directed"} [A Christmas Story]{"entity":"Movie"}
+    - [Director]{"entity": "edge", "value":"directed"} of [A Christmas Story]{"entity":"Movie"}
+    - [A Christmas Story]{"entity":"Movie"} is [directed]{"entity": "edge", "value":"directed"} by
+    - who is the [director]{"entity": "edge", "value":"directed"} of [A Christmas Story]{"entity":"Movie"}
+    - [A Christmas Story]{"entity":"Movie"} is [directed]{"entity": "edge", "value":"directed"} by
+
+- intent: produced_by
+  examples: |
+    - who [produced]{"entity": "edge", "value":"produced"} [Avengers]{"entity":"Movie"}
+    - [producer]{"entity": "edge", "value":"produced"} of [Avengers]{"entity":"Movie"}
+    - [Avengers]{"entity":"Movie"} is [produced]{"entity": "edge", "value":"produced"} by
+    - who is the [producer]{"entity": "edge", "value":"produced"} of [Avengers]{"entity":"Movie"}
+    - [Avengers]{"entity":"Movie"} is [produced]{"entity": "edge", "value":"produced"} by
+    - movies [produced]{"entity": "edge", "value":"produced"} by [Christopher Nolan]{"entity": "Person"}
+    - movies in which [producer]{"entity": "edge", "value":"produced"} is [Christopher Nolan]{"entity": "Person"}
+    - who [produced]{"entity": "edge", "value":"produced"} the movie [Avengers]{"entity":"Movie"}
+    - name of the [producer]{"entity": "edge", "value":"produced"} of [Avengers]{"entity":"Movie"}
+    - what is the name of [Avengers]{"entity":"Movie"} movie [producer]{"entity": "edge", "value":"produced"}
+    - [Christopher Nolan]{"entity": "Person"}
+    - movies by [christopher Nolan]{"entity": "Person"}
+    - movies [produced]{"entity": "edge", "value":"produced"} by [Joel Silver]{"entity": "Person"}.
+    - what are the movies that are [produced]{"entity": "edge", "value":"produced"} by [Joel Silver]{"entity": "Person"}
+    - who [produced]{"entity": "edge", "value":"produced"} [avengers]{"entity": "Movie"} movie
+    - who [produced]{"entity": "edge", "value":"produced"} [Avengers]{"entity": "Movie"} movie
+    - who [produced]{"entity": "edge", "value":"produced"} [Notebook]{"entity": "Movie"} movie
+    - who [produced]{"entity": "edge", "value":"produced"} [notebook]{"entity": "Movie"} movie
+    - who is the [producer]{"entity": "edge", "value":"produced"} of the movie [Avengers]{"entity": "Movie"}
+    - who is the [producer]{"entity": "edge", "value":"produced"} of the movie [avengers]{"entity": "Movie"}
+    - who [produced]{"entity": "edge", "value":"produced"} [Charlie Bratlett]{"entity":"Movie"}
+    - [producer]{"entity": "edge", "value":"produced"} of [Charlie Bratlett]{"entity":"Movie"}
+    - [Charlie Bratlett]{"entity":"Movie"} is [produced]{"entity": "edge", "value":"produced"} by
+    - who is the [producer]{"entity": "edge", "value":"produced"} of [Charlie Bratlett]{"entity":"Movie"}
+    - [Charlie Bratlett]{"entity":"Movie"} is [produced]{"entity": "edge", "value":"produced"} by
+    - who is the [producer]{"entity": "edge", "value":"produced"} of the movie [Charlie Bratlett]{"entity": "Movie"}
+    - who is the [producer]{"entity": "edge", "value":"produced"} of the movie [Charlie Bratlett]{"entity": "Movie"}
+
+    - who [produced]{"entity": "edge", "value":"produced"} [Pirates Of Carrebean]{"entity":"Movie"}
+    - [producer]{"entity": "edge", "value":"produced"} of [Pirates Of Carrebean]{"entity":"Movie"}
+    - [Pirates Of Carrebean]{"entity":"Movie"} is [produced]{"entity": "edge", "value":"produced"} by
+    - who is the [producer]{"entity": "edge", "value":"produced"} of [Pirates Of Carrebean]{"entity":"Movie"}
+    - [Pirates Of Carrebean]{"entity":"Movie"} is [produced]{"entity": "edge", "value":"produced"} by
+    - movies [produced]{"entity": "edge", "value":"produced"} by [Kevin Feige]{"entity": "Person"}
+    - movies in which [producer]{"entity": "edge", "value":"produced"} is [Kevin Feige]{"entity": "Person"}
+    - who [produced]{"entity": "edge", "value":"produced"} the movie [Pirates Of Carrebean]{"entity":"Movie"}
+    - name of the [producer]{"entity": "edge", "value":"produced"} of [Pirates Of Carrebean]{"entity":"Movie"}
+    - what is the name of [Pirates Of Carrebean]{"entity":"Movie"} movie [producer]{"entity": "edge", "value":"produced"}
+    - [Kevin Feige]{"entity": "Person"}
+    - movies by [Kevin Feige]{"entity": "Person"}
+    - movies [produced]{"entity": "edge", "value":"produced"} by [Joel Silver]{"entity": "Person"}.
+    - what are the movies that are [produced]{"entity": "edge", "value":"produced"} by [Joel Silver]{"entity": "Person"}
+    - who [produced]{"entity": "edge", "value":"produced"} [Pirates Of Carrebean]{"entity": "Movie"} movie
+    - who [produced]{"entity": "edge", "value":"produced"} [pirates Of carrebean]{"entity": "Movie"} movie
+    - who [produced]{"entity": "edge", "value":"produced"} [Spiderman]{"entity": "Movie"} movie
+    - who [produced]{"entity": "edge", "value":"produced"} [spiderman]{"entity": "Movie"} movie
+    - who is the [producer]{"entity": "edge", "value":"produced"} of the movie [Pirates Of Carrebean]{"entity": "Movie"}
+    - who is the [producer]{"entity": "edge", "value":"produced"} of the movie [Pirates Of Carrebean]{"entity": "Movie"}
+    - who [produced]{"entity": "edge", "value":"produced"} [A Christmas Story]{"entity":"Movie"}
+    - [producer]{"entity": "edge", "value":"produced"} of [A Christmas Story]{"entity":"Movie"}
+    - [A Christmas Story]{"entity":"Movie"} is [produced]{"entity": "edge", "value":"produced"} by
+    - who is the [producer]{"entity": "edge", "value":"produced"} of [A Christmas Story]{"entity":"Movie"}
+    - [A Christmas Story]{"entity":"Movie"} is [produced]{"entity": "edge", "value":"produced"} by
+    - who is the [producer]{"entity": "edge", "value":"produced"} of the movie [A Christmas Story]{"entity": "Movie"}
+    - who is the [producer]{"entity": "edge", "value":"produced"} of the movie [A Christmas Story]{"entity": "Movie"}
+
+- intent: reviewed
+  examples: |
+    - who [reviewed]{"entity": "edge", "value":"reviewed"} [Avengers]{"entity":"Movie"}
+    - [reviewers]{"entity": "edge", "value":"reviewed"} of [Avengers]{"entity":"Movie"}
+    - [Avengers]{"entity":"Movie"} is [reviewed]{"entity": "edge", "value":"reviewed"} by
+    - [Avengers]{"entity":"Movie"} was [reviewed]{"entity": "edge", "value":"reviewed"} by
+    - who [reviewed]{"entity": "edge", "value":"reviewed"} the movie [Avengers]{"entity":"Movie"}
+    - who is the [reviewer]{"entity": "edge", "value":"reviewed"} of [Avengers]{"entity":"Movie"}
+    - [reviewer]{"entity": "edge", "value":"reviewed"} of [Avengers]{"entity":"Movie"}
+    - movies [reviewed]{"entity": "edge", "value":"reviewed"} by [James Thompson]{"entity": "Person"}
+    - movies that are [reviewed]{"entity": "edge", "value":"reviewed"} by [James Thompson]{"entity": "Person"}
+    - movies which are [reviewed]{"entity": "edge", "value":"reviewed"} by [James Thompson]{"entity": "Person"}
+    - which movies were [reviewed]{"entity": "edge", "value":"reviewed"} by [James Thompson]{"entity": "Person"}
+    - who [reviewed]{"entity": "edge", "value":"reviewed"} the movie [Avengers]{"entity": "Movie"}
+    - who is the [reviewer]{"entity": "edge", "value":"reviewed"} of the movie [Avengers]{"entity": "Movie"}
+    - who [reviewed]{"entity": "edge", "value":"reviewed"} the movie [avengers]{"entity": "Movie"}
+    - who [reviewed]{"entity": "edge", "value":"reviewed"} [Charlie Bratlett]{"entity":"Movie"}
+    - [reviewers]{"entity": "edge", "value":"reviewed"} of [Charlie Bratlett]{"entity":"Movie"}
+    - [Charlie Bratlett]{"entity":"Movie"} is [reviewed]{"entity": "edge", "value":"reviewed"} by
+    - [Charlie Bratlett]{"entity":"Movie"} was [reviewed]{"entity": "edge", "value":"reviewed"} by
+    - who [reviewed]{"entity": "edge", "value":"reviewed"} the movie [Charlie Bratlett]{"entity":"Movie"}
+    - who is the [reviewer]{"entity": "edge", "value":"reviewed"} of [Charlie Bratlett]{"entity":"Movie"}
+    - [reviewer]{"entity": "edge", "value":"reviewed"} of [Charlie Bratlett]{"entity":"Movie"}
+
+    - who [reviewed]{"entity": "edge", "value":"reviewed"} [Pirates Of Carrebean]{"entity":"Movie"}
+    - [reviewers]{"entity": "edge", "value":"reviewed"} of [Pirates Of Carrebean]{"entity":"Movie"}
+    - [Pirates Of Carrebean]{"entity":"Movie"} is [reviewed]{"entity": "edge", "value":"reviewed"} by
+    - [Pirates Of Carrebean]{"entity":"Movie"} was [reviewed]{"entity": "edge", "value":"reviewed"} by
+    - who [reviewed]{"entity": "edge", "value":"reviewed"} the movie [Pirates Of Carrebean]{"entity":"Movie"}
+    - who is the [reviewer]{"entity": "edge", "value":"reviewed"} of [Pirates Of Carrebean]{"entity":"Movie"}
+    - [reviewer]{"entity": "edge", "value":"reviewed"} of [Pirates Of Carrebean]{"entity":"Movie"}
+    - movies [reviewed]{"entity": "edge", "value":"reviewed"} by [David Ansen]{"entity": "Person"}
+    - movies that are [reviewed]{"entity": "edge", "value":"reviewed"} by [David Ansen]{"entity": "Person"}
+    - movies which are [reviewed]{"entity": "edge", "value":"reviewed"} by [David Ansen]{"entity": "Person"}
+    - which movies were [reviewed]{"entity": "edge", "value":"reviewed"} by [David Ansen]{"entity": "Person"}
+    - who [reviewed]{"entity": "edge", "value":"reviewed"} the movie [Pirates Of Carrebean]{"entity": "Movie"}
+    - who is the [reviewer]{"entity": "edge", "value":"reviewed"} of the movie [Pirates Of Carrebean]{"entity": "Movie"}
+    - who [reviewed]{"entity": "edge", "value":"reviewed"} the movie [Pirates Of Carrebean]{"entity": "Movie"}
+    - who [reviewed]{"entity": "edge", "value":"reviewed"} [A Christmas Story]{"entity":"Movie"}
+    - [reviewers]{"entity": "edge", "value":"reviewed"} of [A Christmas Story]{"entity":"Movie"}
+    - [A Christmas Story]{"entity":"Movie"} is [reviewed]{"entity": "edge", "value":"reviewed"} by
+    - [A Christmas Story]{"entity":"Movie"} was [reviewed]{"entity": "edge", "value":"reviewed"} by
+    - who [reviewed]{"entity": "edge", "value":"reviewed"} the movie [A Christmas Story]{"entity":"Movie"}
+    - who is the [reviewer]{"entity": "edge", "value":"reviewed"} of [A Christmas Story]{"entity":"Movie"}
+    - [reviewer]{"entity": "edge", "value":"reviewed"} of [A Christmas Story]{"entity":"Movie"}
+
+- intent: follows
+  examples: |
+    - who [follows]{"entity": "edge", "value":"follows"} [Tatman]{"entity": "Person"}
+    - [Tatman]{"entity": "Person"} [follows]{"entity": "edge", "value":"reviewed"}
+    - [Tatman]{"entity": "Person"} is [followed]{"entity": "edge", "value":"follows"} by
+    - [Tatman]{"entity": "Person"} [followed]{"entity": "edge", "value":"follows"} by
+    - [followers of]{"entity": "edge", "value":"follows"} [Tatman]{"entity": "Person"}
+    - [Angela hope]{"entity": "Person"} is [followed]{"entity": "edge", "value":"follows"} by
+    - [Tatman]{"entity": "Person"} is [followed]{"entity": "edge", "value":"follows"} by
+    - who [follows]{"entity": "edge", "value":"reviewed"} [Angela Hope]{"entity":"Person"}
+    - who [follows]{"entity": "edge", "value":"reviewed"} [Tatman]{"entity":"Person"}
+
+- intent: wrote
+  examples: |
+    - who [wrote]{"entity": "edge", "value":"wrote"} [Avengers]{"entity":"Movie"}
+    - [writer]{"entity": "edge", "value":"wrote"} of [Avengers]{"entity":"Movie"}
+    - [writers]{"entity": "edge", "value":"wrote"} of [Avengers]{"entity":"Movie"}
+    - [Avengers]{"entity":"Movie"} was [written]{"entity": "edge", "value":"wrote"} by
+    - [Avengers]{"entity":"Movie"} [written]{"entity": "edge", "value":"wrote"} by
+    - who is the [writer]{"entity": "edge", "value":"wrote"} of [Avengers]{"entity":"Movie"}
+    - movies [written]{"entity": "edge", "value":"wrote"} by [Christopher Nolan]{"entity":"Person"}
+    - movie [written]{"entity": "edge", "value":"wrote"} by [Christopher Nolan]{"entity":"Person"}
+    - [Christopher Nolan]{"entity":"Person"} [wrote]{"entity": "edge", "value":"wrote"}
+    - movies [written]{"entity": "edge", "value":"wrote"} by [Andy Wachowski]{"entity": "Person"}
+    - movies [written]{"entity": "edge", "value":"wrote"} by [Tatman]{"entity": "Person"}
+    - [writer]{"entity": "edge", "value":"wrote"} of movie [Avengers]{"entity": "Movie"}
+    - [writer]{"entity": "edge", "value":"wrote"} of movie [avengers]{"entity": "Movie"}
+    - who is the [writer]{"entity": "edge", "value":"wrote"} of the movie [Avengers]{"entity": "Movie"}
+    - who is the [writer]{"entity": "edge", "value":"wrote"} of the movie [avengers]{"entity": "Movie"}
+    - who [wrote]{"entity": "edge", "value":"wrote"} [Charlie Bratlett]{"entity":"Movie"}
+    - [writer]{"entity": "edge", "value":"wrote"} of [Charlie Bratlett]{"entity":"Movie"}
+    - [writers]{"entity": "edge", "value":"wrote"} of [Charlie Bratlett]{"entity":"Movie"}
+    - [Charlie Bratlett]{"entity":"Movie"} was [written]{"entity": "edge", "value":"wrote"} by
+    - [Charlie Bratlett]{"entity":"Movie"} [written]{"entity": "edge", "value":"wrote"} by
+    - who is the [writer]{"entity": "edge", "value":"wrote"} of [Charlie Bratlett]{"entity":"Movie"}
+    - who is the [writer]{"entity": "edge", "value":"wrote"} of the movie [Charlie Bratlett]{"entity": "Movie"}
+    - who is the [writer]{"entity": "edge", "value":"wrote"} of the movie [Charlie Bratlett]{"entity": "Movie"}
+
+    - who [wrote]{"entity": "edge", "value":"wrote"} [Pirates Of Carrebean]{"entity":"Movie"}
+    - [writer]{"entity": "edge", "value":"wrote"} of [Pirates Of Carrebean]{"entity":"Movie"}
+    - [writers]{"entity": "edge", "value":"wrote"} of [Pirates Of Carrebean]{"entity":"Movie"}
+    - [Pirates Of Carrebean]{"entity":"Movie"} was [written]{"entity": "edge", "value":"wrote"} by
+    - [Pirates Of Carrebean]{"entity":"Movie"} [written]{"entity": "edge", "value":"wrote"} by
+    - who is the [writer]{"entity": "edge", "value":"wrote"} of [Pirates Of Carrebean]{"entity":"Movie"}
+    - movies [written]{"entity": "edge", "value":"wrote"} by [Aaron Shorkin]{"entity":"Person"}
+    - movie [written]{"entity": "edge", "value":"wrote"} by [Aaron Shorkin]{"entity":"Person"}
+    - [Aaron Shorkin]{"entity":"Person"} [wrote]{"entity": "edge", "value":"wrote"}
+    - movies [written]{"entity": "edge", "value":"wrote"} by [Andy Wachowski]{"entity": "Person"}
+    - movies [written]{"entity": "edge", "value":"wrote"} by [Aaron Shorkin]{"entity": "Person"}
+    - which movies were [written]{"entity": "edge", "value":"wrote"} by [Aaron Shorkin]{"entity": "Person"}
+    - what are the movies [written]{"entity": "edge", "value":"wrote"} by [Aaron Shorkin]{"entity": "Person"}
+    - [writer]{"entity": "edge", "value":"wrote"} of movie [Pirates Of Carrebean]{"entity": "Movie"}
+    - [writer]{"entity": "edge", "value":"wrote"} of movie [Pirates Of Carrebean]{"entity": "Movie"}
+    - who is the [writer]{"entity": "edge", "value":"wrote"} of the movie [Pirates Of Carrebean]{"entity": "Movie"}
+    - who is the [writer]{"entity": "edge", "value":"wrote"} of the movie [pirates Of carrebean]{"entity": "Movie"}
+    - who [wrote]{"entity": "edge", "value":"wrote"} [A Christmas Story]{"entity":"Movie"}
+    - [writer]{"entity": "edge", "value":"wrote"} of [A Christmas Story]{"entity":"Movie"}
+    - [writers]{"entity": "edge", "value":"wrote"} of [A Christmas Story]{"entity":"Movie"}
+    - [A Christmas Story]{"entity":"Movie"} was [written]{"entity": "edge", "value":"wrote"} by
+    - [A Christmas Story]{"entity":"Movie"} [written]{"entity": "edge", "value":"wrote"} by
+    - who is the [writer]{"entity": "edge", "value":"wrote"} of [A Christmas Story]{"entity":"Movie"}
+    - who is the [writer]{"entity": "edge", "value":"wrote"} of the movie [A Christmas Story]{"entity": "Movie"}
+    - who is the [writer]{"entity": "edge", "value":"wrote"} of the movie [A Christmas Story]{"entity": "Movie"}
+
+- intent: other_properties
+  examples: |
+    - Actors born in [1980]{"entity": "Born"}
+    - Actors whose date of birth is [1980]{"entity": "Born"}
+    - which actor is born in [1980]{"entity": "Born"}
+    - actors whose dob is [1980]{"entity": "Born"}
+    - actors with dob [1980]{"entity": "Born"}
+    
+    - movies with rating [45]{"entity": "Rating"}
+    - movies whose rating is greater than [45]{"entity": "Rating"}
+    - movies which contains rating below [45]{"entity": "Rating"}
+    
+    - movies released before [1980]{"entity": "Released"}
+    - movies released after [1980]{"entity": "Released"}
+    - movies released in [1980]{"entity": "Released"}
+    - movies before [1980]{"entity": "Released"}
+    - movies after [1980]{"entity": "Released"}
+    - movies in [1980]{"entity": "Released"}
+
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- lookup: Person
+  examples: |
+    - Keanu Reeves
+    - Carrie-Anne Moss
+    - Laurence Fishburne
+    - Hugo Weaving
+    - Andy Wachowski
+    - Lana Wachowski
+    - Joel Silver
+    - Emil Eifrem
+    - Charlize Theron
+    - Al Pacino
+    - Taylor Hackford
+    - Tom Cruise
+    - Jack Nicholson
+    - Demi Moore
+    - Kevin Bacon
+    - Kiefer Sutherland
+    - Noah Wyle
+    - Cuba Gooding Jr.
+    - Kevin Pollak
+    - J.T. Walsh
+    - James Marshall
+    - Christopher Guest
+    - Rob Reiner
+    - Aaron Sorkin
+    - Kelly McGillis
+
+- regex: Rating
+  examples: |
+    - \d{2,3}
+- regex: Released
+  examples: |
+    - \d{4}
+- regex: Born
+  examples: |
+    - \d{4}
+  
+
+- lookup: Movie
+  examples: |
+    - The Matrix
+    - The Matrix Reloaded
+    - The Matrix Revolutions
+    - The Devil's Advocate
+    - A Few Good Men
+    - Top Gun
+    - Jerry Maguire
+    - Stand By Me
+    - As Good as It Gets
+    - What Dreams May Come
+    - Snow Falling on Cedars
+    - You've Got Mail
+    - Sleepless in Seattle
+    - Joe Versus the Volcano
+    - When Harry Met Sally
+    - That Thing You Do
+    - The Replacements
+    - RescueDawn
+    - The Birdcage
+    - Unforgiven
+    - Johnny Mnemonic
+    - Cloud Atlas
+    - The Da Vinci Code
+    - V for Vendetta
+    - Speed Racer
+
+

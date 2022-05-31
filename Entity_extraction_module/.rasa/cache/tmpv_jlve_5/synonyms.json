@@ -1,0 +1,18 @@
+{
+  "actors": "acted_in",
+  "co-stars": "acted_in",
+  "acted": "acted_in",
+  "actor": "acted_in",
+  "cast": "acted_in",
+  "act": "acted_in",
+  "director": "directed",
+  "producer": "produced",
+  "reviewers": "reviewed",
+  "reviewer": "reviewed",
+  "follows": "reviewed",
+  "followed": "follows",
+  "followers of": "follows",
+  "writer": "wrote",
+  "writers": "wrote",
+  "written": "wrote"
+}

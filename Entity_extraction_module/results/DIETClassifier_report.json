@@ -1,0 +1,63 @@
+{
+  "Person": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 107,
+    "confused_with": {}
+  },
+  "Rating": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 3,
+    "confused_with": {}
+  },
+  "Born": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 5,
+    "confused_with": {}
+  },
+  "Released": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 6,
+    "confused_with": {}
+  },
+  "edge": {
+    "precision": 1.0,
+    "recall": 0.9811320754716981,
+    "f1-score": 0.9904761904761905,
+    "support": 212,
+    "confused_with": {}
+  },
+  "Movie": {
+    "precision": 0.9939577039274925,
+    "recall": 1.0,
+    "f1-score": 0.996969696969697,
+    "support": 329,
+    "confused_with": {}
+  },
+  "micro avg": {
+    "precision": 0.996969696969697,
+    "recall": 0.9939577039274925,
+    "f1-score": 0.9954614220877459,
+    "support": 662
+  },
+  "macro avg": {
+    "precision": 0.998992950654582,
+    "recall": 0.9968553459119497,
+    "f1-score": 0.997907647907648,
+    "support": 662
+  },
+  "weighted avg": {
+    "precision": 0.9969971066346601,
+    "recall": 0.9939577039274925,
+    "f1-score": 0.9954440826042035,
+    "support": 662
+  },
+  "accuracy": 0.9955555555555555
+}
