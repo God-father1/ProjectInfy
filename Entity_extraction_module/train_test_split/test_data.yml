@@ -1,0 +1,172 @@
+version: "3.1"
+nlu:
+- intent: bot_challenge
+  examples: |
+    - am I talking to a bot?
+- intent: affirm
+  examples: |
+    - correct
+- intent: deny
+  examples: |
+    - don't like that
+    - never
+- intent: follows
+  examples: |
+    - [Tatman](Person) is [followed]{"entity": "edge", "value": "follows"} by
+- intent: goodbye
+  examples: |
+    - see you around
+    - cu
+- intent: greet
+  examples: |
+    - let's go
+    - goodevening
+    - good afternoon
+- intent: other_properties
+  examples: |
+    - movies which contains rating below [45](Rating)
+    - actors whose dob is [1980](Born)
+    - movies with rating [45](Rating)
+- intent: acted_in
+  examples: |
+    - who [acted]{"entity": "edge", "value": "acted_in"} in movie [Charlie Bratlett](Movie)
+    - actors [acted]{"entity": "edge", "value": "acted_in"} in movie [Avengers](Movie)
+    - who [acted]{"entity": "edge", "value": "acted_in"} in [Avengers](Movie)
+    - [co-stars]{"entity": "edge", "value": "acted_in"} of movie [Avengers](Movie)
+    - who [acted]{"entity": "edge", "value": "acted_in"} in [Pirates Of Carrebean](Movie)
+    - who [acted]{"entity": "edge", "value": "acted_in"} in [Charlie Bratlett](Movie)
+    - movies [Rowan Atkinson](Person) [acted]{"entity": "edge", "value": "acted_in"} in
+    - [co-stars]{"entity": "edge", "value": "acted_in"} of movie [Charlie Bratlett](Movie)
+- intent: directed_by
+  examples: |
+    - movies [directed](edge) by [Christopher Nolan](Person)
+    - who is the [director]{"entity": "edge", "value": "directed"} of [spiderman](Movie)
+    - who [directed](edge) [Avengers](Movie)
+    - what is the name of [Pirates Of Carrebean](Movie) movie [director]{"entity": "edge", "value": "directed"}
+    - who is the [director]{"entity": "edge", "value": "directed"} of [Notebook](Movie)
+    - who is the [director]{"entity": "edge", "value": "directed"} of [Pirates Of Carrebean](Movie)
+    - what is the name of [Avengers](Movie) movie [director]{"entity": "edge", "value": "directed"}
+- intent: reviewed
+  examples: |
+    - [Charlie Bratlett](Movie) is [reviewed](edge) by
+    - who [reviewed](edge) [Pirates Of Carrebean](Movie)
+    - which movies were [reviewed](edge) by [David Ansen](Person)
+    - who [reviewed](edge) [Charlie Bratlett](Movie)
+    - who is the [reviewer]{"entity": "edge", "value": "reviewed"} of the movie [Pirates Of Carrebean](Movie)
+    - who is the [reviewer]{"entity": "edge", "value": "reviewed"} of [Charlie Bratlett](Movie)
+    - [reviewers]{"entity": "edge", "value": "reviewed"} of [Pirates Of Carrebean](Movie)
+    - [Avengers](Movie) was [reviewed](edge) by
+- intent: wrote
+  examples: |
+    - [writers]{"entity": "edge", "value": "wrote"} of [A Christmas Story](Movie)
+    - [writers]{"entity": "edge", "value": "wrote"} of [Pirates Of Carrebean](Movie)
+    - who is the [writer]{"entity": "edge", "value": "wrote"} of the movie [A Christmas Story](Movie)
+    - [writer]{"entity": "edge", "value": "wrote"} of [Avengers](Movie)
+    - [writer]{"entity": "edge", "value": "wrote"} of movie [Avengers](Movie)
+    - [Charlie Bratlett](Movie) [written]{"entity": "edge", "value": "wrote"} by
+    - [writers]{"entity": "edge", "value": "wrote"} of [Avengers](Movie)
+    - movies [written]{"entity": "edge", "value": "wrote"} by [Christopher Nolan](Person)
+    - [writers]{"entity": "edge", "value": "wrote"} of [Charlie Bratlett](Movie)
+- intent: produced_by
+  examples: |
+    - who is the [producer]{"entity": "edge", "value": "produced"} of [Pirates Of Carrebean](Movie)
+    - who is the [producer]{"entity": "edge", "value": "produced"} of the movie [Avengers](Movie)
+    - who [produced](edge) [A Christmas Story](Movie)
+    - movies in which [producer]{"entity": "edge", "value": "produced"} is [Christopher Nolan](Person)
+    - who [produced](edge) [Avengers](Movie) movie
+    - [Charlie Bratlett](Movie) is [produced](edge) by
+    - [Christopher Nolan](Person)
+    - [producer]{"entity": "edge", "value": "produced"} of [A Christmas Story](Movie)
+    - movies [produced](edge) by [Kevin Feige](Person)
+- synonym: acted_in
+  examples: |
+    - actors
+    - co-stars
+    - acted
+    - actor
+    - cast
+    - act
+- synonym: directed
+  examples: |
+    - Director
+    - director
+- synonym: produced
+  examples: |
+    - producer
+- synonym: reviewed
+  examples: |
+    - reviewers
+    - reviewer
+    - follows
+- synonym: follows
+  examples: |
+    - followed
+    - followers of
+- synonym: wrote
+  examples: |
+    - writer
+    - writers
+    - written
+- regex: Born
+  examples: |
+    - \d{4}
+- regex: Rating
+  examples: |
+    - \d{2,3}
+- regex: Released
+  examples: |
+    - \d{4}
+- lookup: Person
+  examples: |
+    - Keanu Reeves
+    - Carrie-Anne Moss
+    - Laurence Fishburne
+    - Hugo Weaving
+    - Andy Wachowski
+    - Lana Wachowski
+    - Joel Silver
+    - Emil Eifrem
+    - Charlize Theron
+    - Al Pacino
+    - Taylor Hackford
+    - Tom Cruise
+    - Jack Nicholson
+    - Demi Moore
+    - Kevin Bacon
+    - Kiefer Sutherland
+    - Noah Wyle
+    - Cuba Gooding Jr.
+    - Kevin Pollak
+    - J.T. Walsh
+    - James Marshall
+    - Christopher Guest
+    - Rob Reiner
+    - Aaron Sorkin
+    - Kelly McGillis
+- lookup: Movie
+  examples: |
+    - The Matrix
+    - The Matrix Reloaded
+    - The Matrix Revolutions
+    - The Devil's Advocate
+    - A Few Good Men
+    - Top Gun
+    - Jerry Maguire
+    - Stand By Me
+    - As Good as It Gets
+    - What Dreams May Come
+    - Snow Falling on Cedars
+    - You've Got Mail
+    - Sleepless in Seattle
+    - Joe Versus the Volcano
+    - When Harry Met Sally
+    - That Thing You Do
+    - The Replacements
+    - RescueDawn
+    - The Birdcage
+    - Unforgiven
+    - Johnny Mnemonic
+    - Cloud Atlas
+    - The Da Vinci Code
+    - V for Vendetta
+    - Speed Racer

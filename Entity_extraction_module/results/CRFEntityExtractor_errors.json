@@ -1,0 +1,53 @@
+[
+  {
+    "text": "followers of Tatman",
+    "entities": [
+      {
+        "start": 0,
+        "end": 12,
+        "value": "follows",
+        "entity": "edge"
+      },
+      {
+        "start": 13,
+        "end": 19,
+        "value": "Tatman",
+        "entity": "Person"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "edge",
+        "start": 0,
+        "end": 9,
+        "confidence_entity": 0.8544252514839172,
+        "value": "followers",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "Person",
+        "start": 13,
+        "end": 19,
+        "confidence_entity": 0.9932030439376831,
+        "value": "Tatman",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "edge",
+        "start": 0,
+        "end": 9,
+        "confidence_entity": 0.8985444985906399,
+        "value": "followers",
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "Person",
+        "start": 13,
+        "end": 19,
+        "confidence_entity": 0.9857156911248091,
+        "value": "Tatman",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  }
+]

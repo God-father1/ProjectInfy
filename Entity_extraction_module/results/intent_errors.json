@@ -1,0 +1,18 @@
+[
+  {
+    "text": "Christopher Nolan",
+    "intent": "produced_by",
+    "intent_prediction": {
+      "name": "directed_by",
+      "confidence": 0.8625668883323669
+    }
+  },
+  {
+    "text": "movies by christopher Nolan",
+    "intent": "produced_by",
+    "intent_prediction": {
+      "name": "directed_by",
+      "confidence": 0.8973910808563232
+    }
+  }
+]
